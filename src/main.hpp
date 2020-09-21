@@ -6,12 +6,12 @@
 #include <algorithm>
 #include <cstring>
 
-#define INDEXLIMIT 160
+#define INDEXLIMIT 138
 #define INDEXNAME "AppListIndex.txt"
 #define INDEXSYMBOL '='
-#define VERSION "1.0.1"
+#define VERSION "1.1.2"
 
-inline void AddToAppList();
-inline void DeleteAppList();
+void AddToAppList(const unsigned short InitialIndex);
+void DeleteAppList();
 
 std::fstream IndexFile;

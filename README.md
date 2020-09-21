@@ -24,6 +24,11 @@ returns program version.
 delete old AppList before creating a new one.
 ```
 
+```
+-a "number"
+define start point. (Arbitrary)
+```
+
 </br>
 
 ## Adding Game/DLC in the list
