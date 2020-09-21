@@ -37,7 +37,7 @@ Format: ID = NAME
 
 Example: 382310 = ECO
 
-Add the Games or DLC inside the file "AppListIndex.txt" 
+Add the Game or DLC inside the file "AppListIndex.txt" 
 
 Example:
 
@@ -46,16 +46,16 @@ Example:
 1118010 = Monster Hunter World: Iceborne
 ``` 
 
-Hint: use [Get DLC Info from SteamDB](https://github.com/Sak32009/GetDLCInfoFromSteamDB) using "APPID = APPIDNAME".
+Tip: use [Get DLC Info from SteamDB](https://github.com/Sak32009/GetDLCInfoFromSteamDB) using "APPID = APPIDNAME".
 
-## Using
+## Usage
 </br>
 
 1. Place the files "AppList-Manager.exe" and "AppListIndex.txt" inside the same folder as the GL2020
 
 2. Follow the "Adding Game/DLC in the list"
 
-3. Opens "AppList-Manager.exe" with CMD or Powershell.
+3. Open "AppList-Manager.exe" in CMD or Powershell.
 
 4. Done.
 
