@@ -11,7 +11,7 @@
 #define INDEXSYMBOL '='
 #define VERSION "1.1.4"
 
-void AddToAppList(const unsigned short InitialIndex);
-void DeleteAppList();
+void deleteAppList();
+void addToAppList(const unsigned short InitialIndex);
 
 std::fstream IndexFile;

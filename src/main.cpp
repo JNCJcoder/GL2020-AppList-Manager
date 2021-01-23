@@ -25,35 +25,35 @@ int main(int argc, char * argv[])
         
         if(!param) return 0;
         if(param >= INDEXLIMIT) return 0;
-        if(cmdOptionExists(argv, argcv, "-D")) DeleteAppList();
+        if(cmdOptionExists(argv, argcv, "-D")) deleteAppList();
 
-        AddToAppList(param);
+        addToAppList(param);
         
         return 0;
     }
 
     if(cmdOptionExists(argv, argcv, "-D"))
     {
-        DeleteAppList();
+        deleteAppList();
     } else std::cout << "       Populating AppList..." << "\n";
 
-    AddToAppList(0);
+    addToAppList(0);
 
     return 0;
 }
 
-void DeleteAppList()
+void deleteAppList()
 {
     std::cout << "      Deleting AppList..." << "\n";
 
-    for (unsigned short i = 0; i < INDEXLIMIT; ++i)
+    for (unsigned short item = 0; item < INDEXLIMIT; ++item)
     {
-        std::string ss = "AppList/" + patch::to_string(i) + ".txt";
-        char* cstr;
-        NewChar StringToChar(cstr, ss.length() + 1);
-        strcpy(cstr, ss.c_str());
+        std::string cppString = "AppList/" + patch::toString(item) + ".txt";
+        char* cString;
+        NewChar StringToChar(cString, cppString.length() + 1);
+        strcpy(cString, cppString.c_str());
 
-        if( remove( cstr ) != 0 ) continue;
+        if (remove( cString ) != 0) continue;
     }
 
     std::cout << "      AppList deleted." << "\n" << "\n"
@@ -61,25 +61,23 @@ void DeleteAppList()
               << "      Populating AppList..." << "\n"; 
 }
 
-void AddToAppList(const unsigned short InitialIndex)
+void addToAppList(const unsigned short initialIndex)
 {
-    for (unsigned short IndexTotal = InitialIndex; IndexTotal < INDEXLIMIT; ++IndexTotal)
+    for (unsigned short indexTotal = initialIndex; indexTotal < INDEXLIMIT; ++indexTotal)
     {
         std::string line;
         std::getline( IndexFile, line );
 
-        if(line == "") {
-            break;
-        }
+        if (line == "") break;
 
-        std::ofstream AddApp;
-        std::string AddAppName = "AppList/" + patch::to_string(IndexTotal) + ".txt";
-        AddApp.open(AddAppName, std::ios::out | std::ios::trunc | std::ios::in);
+        std::ofstream addApp;
+        std::string addAppName = "AppList/" + patch::toString(indexTotal) + ".txt";
+        addApp.open(addAppName, std::ios::out | std::ios::trunc | std::ios::in);
 
-        if (AddApp.is_open())
+        if (addApp.is_open())
         {
-            AddApp << std::stoi(ParserIndex(line, INDEXSYMBOL));
-            AddApp.close();
+            addApp << std::stoi(parserIndex(line, INDEXSYMBOL));
+            addApp.close();
         } else { std::cout << "     Unable to save file"; return; }
     }
 

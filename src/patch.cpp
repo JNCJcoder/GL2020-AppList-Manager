@@ -1,15 +1,15 @@
 namespace patch
 {
     template < typename T >
-    const std::string to_string( const T& n )
+    const std::string toString(const T& number)
     {
-        std::ostringstream stm ;
-        stm << n ;
-        return stm.str() ;
+        std::ostringstream newString;
+        newString << number;
+        return newString.str();
     }
 }
 
-const std::string ParserIndex(const std::string& s, const char& c)
+const std::string parserIndex(const std::string& s, const char& c)
 {
     std::string buff{""};
 
