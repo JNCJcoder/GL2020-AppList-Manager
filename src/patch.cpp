@@ -11,10 +11,10 @@ namespace patch
 
 const unsigned int ConvertToInt(const std::string &ID)
 {
-    std::istringstream Valor(ID);
-    int retornando = 0;
-    Valor >> retornando;
-    return retornando;
+    std::istringstream Value(ID);
+    int returning = 0;
+    Value >> returning;
+    return returning;
 }
 
 const std::string ParserIndex(const std::string& s, const char& c)
