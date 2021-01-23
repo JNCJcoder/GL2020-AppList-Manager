@@ -78,7 +78,7 @@ void AddToAppList(const unsigned short InitialIndex)
 
         if (AddApp.is_open())
         {
-            AddApp << ConvertToInt(ParserIndex(line, INDEXSYMBOL));
+            AddApp << std::stoi(ParserIndex(line, INDEXSYMBOL));
             AddApp.close();
         } else { std::cout << "     Unable to save file"; return; }
     }
