@@ -48,7 +48,7 @@ void deleteAppList()
 
     for (unsigned short item = 0; item < INDEXLIMIT; ++item)
     {
-        std::string cppString = "AppList/" + patch::toString(item) + ".txt";
+        std::string cppString = "AppList/" + std::to_string(item) + ".txt";
         char* cString;
         NewChar StringToChar(cString, cppString.length() + 1);
         strcpy(cString, cppString.c_str());
@@ -71,7 +71,7 @@ void addToAppList(const unsigned short initialIndex)
         if (line == "") break;
 
         std::ofstream addApp;
-        std::string addAppName = "AppList/" + patch::toString(indexTotal) + ".txt";
+        std::string addAppName = "AppList/" + std::to_string(indexTotal) + ".txt";
         addApp.open(addAppName, std::ios::out | std::ios::trunc | std::ios::in);
 
         if (addApp.is_open())
