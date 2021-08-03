@@ -9,7 +9,7 @@
 #define INDEX_LIMIT 143
 #define INDEX_NAME "AppListIndex.txt"
 #define INDEX_SYMBOL '='
-#define VERSION "1.1.7"
+#define VERSION "1.1.8"
 
 void deleteAppList();
 void addToAppList(const unsigned short InitialIndex);
