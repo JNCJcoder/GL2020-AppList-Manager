@@ -6,10 +6,10 @@
 #include <algorithm>
 #include <cstring>
 
-#define INDEXLIMIT 140
-#define INDEXNAME "AppListIndex.txt"
-#define INDEXSYMBOL '='
-#define VERSION "1.1.5"
+#define INDEX_LIMIT 140
+#define INDEX_NAME "AppListIndex.txt"
+#define INDEX_SYMBOL '='
+#define VERSION "1.1.6"
 
 void deleteAppList();
 void addToAppList(const unsigned short InitialIndex);

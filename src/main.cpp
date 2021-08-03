@@ -7,7 +7,7 @@
 int main(int argc, char * argv[])
 {
     const auto argcv = argv+argc;
-    FileExplorer Index(IndexFile, INDEXNAME);
+    FileExplorer Index(IndexFile, INDEX_NAME);
     
     std::cout << "  GL2020 AppList Manager" << "\n";
 
@@ -24,7 +24,7 @@ int main(int argc, char * argv[])
         const unsigned short param = atoi(getCmdOption(argv, argcv, "-a"));
         
         if(!param) return 0;
-        if(param >= INDEXLIMIT) return 0;
+        if(param >= INDEX_LIMIT) return 0;
         if(cmdOptionExists(argv, argcv, "-D")) deleteAppList();
 
         addToAppList(param);
@@ -46,7 +46,7 @@ void deleteAppList()
 {
     std::cout << "      Deleting AppList..." << "\n";
 
-    for (unsigned short item = 0; item < INDEXLIMIT; ++item)
+    for (unsigned short item = 0; item < INDEX_LIMIT; ++item)
     {
         std::string cppString = "AppList/" + std::to_string(item) + ".txt";
         char* cString;
@@ -63,7 +63,7 @@ void deleteAppList()
 
 void addToAppList(const unsigned short initialIndex)
 {
-    for (unsigned short indexTotal = initialIndex; indexTotal < INDEXLIMIT; ++indexTotal)
+    for (unsigned short indexTotal = initialIndex; indexTotal < INDEX_LIMIT; ++indexTotal)
     {
         std::string line;
         std::getline( IndexFile, line );
@@ -76,7 +76,7 @@ void addToAppList(const unsigned short initialIndex)
 
         if (addApp.is_open())
         {
-            addApp << std::stoi(parserIndex(line, INDEXSYMBOL));
+            addApp << std::stoi(parserIndex(line, INDEX_SYMBOL));
             addApp.close();
         } else { std::cout << "     Unable to save file"; return; }
     }
