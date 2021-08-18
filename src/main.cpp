@@ -1,8 +1,6 @@
 #include "main.hpp"
 #include "File.cpp"
-#include "patch.cpp"
 #include "argparser.cpp"
-#include "NewChar.cpp"
 
 int main(int argc, char * argv[])
 {
@@ -48,12 +46,8 @@ void deleteAppList()
 
     for (unsigned short item = 0; item < INDEX_LIMIT; ++item)
     {
-        std::string cppString = "AppList/" + std::to_string(item) + ".txt";
-        char* cString;
-        NewChar StringToChar(cString, cppString.length() + 1);
-        strcpy(cString, cppString.c_str());
-
-        if (remove( cString ) != 0) continue;
+        std::string fileApp = "AppList/" + std::to_string(item) + ".txt";
+        if (remove(fileApp.c_str()) != 0) continue;
     }
 
     std::cout << "      AppList deleted." << "\n" << "\n"
@@ -63,22 +57,28 @@ void deleteAppList()
 
 void addToAppList(const unsigned short initialIndex)
 {
-    for (unsigned short indexTotal = initialIndex; indexTotal < INDEX_LIMIT; ++indexTotal)
-    {
-        std::string line;
-        std::getline( IndexFile, line );
+    std::string line;
+    int index = initialIndex;
 
-        if (line == "") break;
+    while(std::getline(IndexFile, line))
+    {
+        if(line[0] == INDEX_COM || line.empty()) continue;
+
+        std::string appId = line.substr(0, line.find(INDEX_SYMBOL));
 
         std::ofstream addApp;
-        std::string addAppName = "AppList/" + std::to_string(indexTotal) + ".txt";
-        addApp.open(addAppName, std::ios::out | std::ios::trunc | std::ios::in);
 
-        if (addApp.is_open())
-        {
-            addApp << std::stoi(parserIndex(line, INDEX_SYMBOL));
-            addApp.close();
-        } else { std::cout << "     Unable to save file"; return; }
+        addApp.open(
+            "AppList/" + std::to_string(index) + ".txt",
+            std::ios::out | std::ios::trunc | std::ios::in
+        );
+
+        if (addApp.is_open())   addApp << appId;
+        else                    std::cout << "     Unable to save file";
+
+        addApp.close();
+
+        index++;
     }
 
     std::cout << "Done!";

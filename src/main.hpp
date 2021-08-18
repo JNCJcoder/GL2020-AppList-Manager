@@ -1,17 +1,15 @@
 #include <fstream>
-#include <vector>
+#include <algorithm>
 #include <iostream>
 #include <string>
-#include <sstream> 
-#include <algorithm>
-#include <cstring>
 
 #define INDEX_LIMIT 143
 #define INDEX_NAME "AppListIndex.txt"
 #define INDEX_SYMBOL '='
-#define VERSION "1.1.9"
+#define INDEX_COM '#'
+#define VERSION "2.0.0"
 
 void deleteAppList();
 void addToAppList(const unsigned short InitialIndex);
 
-std::fstream IndexFile;
+std::ifstream IndexFile;

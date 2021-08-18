@@ -42,6 +42,8 @@ Add the Game or DLC inside the file "AppListIndex.txt"
 Example:
 
 ```
+# Monster Hunter World
+
 582010 = Monster Hunter: World
 1118010 = Monster Hunter World: Iceborne
 ``` 
@@ -63,8 +65,8 @@ Tip: use [Get DLC Info from SteamDB](https://github.com/Sak32009/GetDLCInfoFromS
 
 ## Todo
 
-- comment support
-- line-break support
+- ~comment support~ *added in update 2.0.0*
+- ~line-break support~ *added in update 2.0.0*
 
 </br>
 

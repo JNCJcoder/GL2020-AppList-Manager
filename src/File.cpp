@@ -3,10 +3,10 @@
 class FileExplorer
 {
     private:
-        std::ofstream& m_file;
+        std::ifstream& m_file;
     
     public:
-        FileExplorer(std::ofstream& file, const char* fileName): m_file(file)
+        FileExplorer(std::ifstream& file, const char* fileName): m_file(file)
         {
             m_file.open(fileName);
         }
