@@ -65,6 +65,7 @@ void addToAppList(const unsigned short initialIndex)
         if(line[0] == INDEX_COM || line.empty()) continue;
 
         std::string appId = line.substr(0, line.find(INDEX_SYMBOL));
+        appId = line.substr(0, line.find(' '));
 
         std::ofstream addApp;
 

@@ -7,7 +7,7 @@
 #define INDEX_NAME "AppListIndex.txt"
 #define INDEX_SYMBOL '='
 #define INDEX_COM '#'
-#define VERSION "2.0.0"
+#define VERSION "2.0.1"
 
 void deleteAppList();
 void addToAppList(const unsigned short InitialIndex);
