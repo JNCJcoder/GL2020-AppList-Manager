@@ -15,18 +15,8 @@
 
 ## Launch Options (Args)
 ```
--v
-returns program version.
-```
-
-```
 -D
 delete old AppList before creating a new one.
-```
-
-```
--a "number"
-define start point. (Arbitrary)
 ```
 
 </br>
@@ -48,7 +38,7 @@ Example:
 1118010 = Monster Hunter World: Iceborne
 ``` 
 
-Tip: use [Get DLC Info from SteamDB](https://github.com/Sak32009/GetDLCInfoFromSteamDB) using "APPID = APPIDNAME".
+Tip: use [Get DLC Info from SteamDB](https://github.com/Sak32009/GetDLCInfoFromSteamDB) using "APPID = APPIDNAME" or [JNCJcoder's Get DLC List from SteamDB](https://github.com/JNCJcoder/GetDLCListFromSteamDB) using CreamAPI option.
 
 ## Usage
 </br>
