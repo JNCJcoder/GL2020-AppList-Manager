@@ -1,3 +1,5 @@
+## 🚩 THIS REPOSITORY WILL NO LONGER BE SUPPORTED. USE [AppList-Creator](https://github.com/JNCJcoder/AppList-Creator) INSTEAD!! 🚩
+
 <h1 align="center">
   <br>
   GL2020-AppList-Manager
